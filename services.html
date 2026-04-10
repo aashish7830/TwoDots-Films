@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TwoDots Films - Reconstructed Layout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <!-- /* services page */ -->
+    <style>
+        /* Basic Styling - Same as before */
+        
+        .all-section{
+          margin-left:150px;
+        }
+        .main-section {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            max-width: 1400px;
+            width: 95%;
+            margin-bottom: 40px; /* Space between rows */
+            margin-top:52px;
+            
+
+        }
+
+        /* Card Styling - Same as before */
+        .card {
+            /* background-color: #f1f3f3; */
+            /* border-radius: 30px; */
+            /* overflow: hidden; */
+            /* width: 100%; */
+            flex-shrink: 0;
+            /* box-shadow: 0 10px 30px rgba(0,0,0,0.05); */
+            text-align: center;
+            height:400px;
+        }
+
+        .card-header {
+            background-color: #4b5e65; 
+            color: white;
+            padding: 25px 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-footer {
+            padding: 9px;
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Services List Styling - Same as before */
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 20px;
+            flex-grow: 1;
+              padding-left: 1px;
+              padding-right:1px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list.left {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .service-list.right {
+            border-right: 3px solid #ccc;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        .service-list li {
+            color: #888;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+      /* --- Updated Responsive Design --- */
+        @media (max-width: 1100px) {
+            .main-section {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+            .services-container {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+        }
+
+         @media (max-width: 768px) {
+    .all-section {
+        margin-left: 0;
+        padding: 0 10px;
+    }
+
+    .main-section {
+        display: flex;
+        flex-direction: column; /* Sab kuch ek line mein stack hoga */
+        align-items: center;
+        /* width: 100%; */
+        gap: 10px;
+    }
+
+    /* --- SPECIFIC ORDERING --- */
+
+    /* Pahli Image (Left wali card) */
+    .main-section .card:first-child {
+        order: 1;
+        /* width: 90%; */
+    }
+
+    /* Pahla Text Block (Left wali list) */
+    .main-section .services-container:nth-child(2) {
+        order: 2;
+        width: 100%;
+    }
+
+    /* Doosri Image (Right wali card) */
+    .main-section .card:last-child {
+        order: 3;
+        /* width: 100%; */
+    }
+
+    /* Doosra Text Block (Right wali list) */
+    .main-section .services-container:nth-child(3) {
+        order: 4;
+        width: 100%;
+    }
+
+    /* Image size adjustment */
+    .card-img {
+        height: 80%;
+        /* width: 100%; */
+        object-fit: cover;
+         
+    }
+
+    /* Text alignment fix for mobile */
+    .service-list.left, .service-list.right {
+        border: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .service-list li {
+        font-size: 16px;
+        /* margin-top: 1px; */
+    }
+
+     
+}
+
+
+
+        .section-header {
+            text-align: center;
+            padding: 50px 0 20px;
+            background-color:rgba(233, 233, 233, 0.89);
+        }
+
+        .section-header h2 {
+            font-size: 62px;
+            color: #4b5e65;
+            margin: 0;
+        }
+
+        .section-header h2 span {
+            color: rgb(25, 172, 191);
+        }
+
+         /* Section Header */
+        .reel-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background-color: #f5f5f5;
+        }
+
+        .reel-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+            color: #4b5e65; /* Dark Gray */
+        }
+
+        .reel-header h2 span {
+            color: #419ba6; /* Teal Color from image */
+        }
+
+        /* Grid Container */
+        .reel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 Columns */
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-bottom:29px;
+            margin-top:4rem;
+        }
+
+        /* Box Styling */
+        .reel-box {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            overflow: hidden;
+            text-align: left; /* Image mein text left se start ho raha hai */
+        }
+
+        .text-box {
+            background-color: #e5e8e8; /* Light gray background */
+        }
+
+        .image-box {
+            padding: 0; /* Remove padding for images */
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Typography */
+  
+.reel-box h3 {
+    font-family: 'Arial Black', 'Arial', sans-serif; /* Heavy font for Nexa */
+    font-size: 40px; /* Large heading */
+    font-weight: 900;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -1.5px; /* Nexa wale text mein letters kafi paas hain */
+}
+
+.reel-box p {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px; /* Subheading size */
+    font-weight: 700; /* Commercial thoda bold hai image mein */
+    color: #1a1a1a;
+    margin: 0px 0 0; /* Heading ke ekdum niche */
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+        /* --- Media Query for Mobile --- */
+    @media (max-width: 768px) {
+    .reel-grid {
+        display: flex; /* Mobile par Grid ki jagah Flex use karein */
+        flex-direction: column; /* Vertical stack ke liye */
+    }
+
+    .reel-grid .reel-box {
+        width: 100%; /* Full width */
+        height: auto; /* Content ke hisab se height adjust hogi */
+        min-height: 250px;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    /* Pehli Row (Nexa): Text (1st) -> Image (2nd) - Yeh already sahi hai */
+    
+    /* Doosri Row (Niharika): Hum Image ko Text ke baad dikhayenge */
+    /* Iske liye hum second row ke elements ko target karenge */
+    
+    /* Hum image-box ko 'order: 2' aur text-box ko 'order: 1' de sakte hain */
+    .reel-grid .text-box {
+        order: 1; /* Saare text boxes pehle aayenge */
+    }
+    
+    .reel-grid .image-box {
+        order: 2; /* Saare image boxes baad mein aayenge */
+    }
+
+    /* Lekin upar wala logic sab mix kar dega. 
+       Isliye hum sirf SECOND pair ko target karenge: */
+    
+    .reel-grid div:nth-child(3) { 
+        order: 4; /* Niharika Image ko niche bhejo */
+    }
+    .reel-grid div:nth-child(4) { 
+        order: 3; /* Niharika Text ko upar lao */
+    }
+    
+    /* Final Result: 
+       Child 1 (Nexa Text) -> Order Default (1)
+       Child 2 (Nexa Image) -> Order Default (2)
+       Child 4 (Niharika Text) -> Order 3
+       Child 3 (Niharika Image) -> Order 4
+    */
+
+    .reel-box h3 {
+        font-size: 20px;
+    }
+
+    .reel-box p {
+        font-size: 18px;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <header class="topbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo-animation.gif" alt="TwoDots Films Logo" class="logo-gif">
+        </a>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="reco.html">Recognition</a>
+        <a href="review.html">Reviews</a>
+        <a href="Blog.html">Blog</a>
+        <a href="#contact" class="btn mobile-btn">Get Started</a>
+    </nav>
+
+    <a href="#contact" class="btn desktop-btn">Get Started</a>
+</header>
+
+
+      
+    <section class="section-banner">
+      <h2 class="section-title">Our <span class="accent">Services</span></h2>
+    </section>
+
+ <section class="all-section">
+
+    <section class="main-section">
+        <div class="card">
+            <img src="images\Our Service\AI Innovation.png" alt="AI" class="card-img"> 
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list left">
+                <li>AI Video Production</li>
+                <li>AI-Powered Ad Creative</li>
+                <li>AI Product & Brand Visuals</li>
+                <li>AI Content for Social Media</li>
+                <li>AI Personalised Video Content</li>
+                <li>AI Content Automation</li>
+            </ul>
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list right">
+                <li>Performance Marketing</li>
+                <li>Social Media Management</li>
+                <li>Influencer Marketing</li>
+                <li>Search Engine Optimization</li>
+                <li>Content Strategy & Planning</li>
+                <li>Website Design & Development</li>
+            </ul>
+        </div>
+
+        <div class="card">
+             
+            <img src="images\Our Service\Digital Solution.png" alt="Digital" class="card-img">
+           
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="card">
+            
+            <img src="images\Our Service\Brand Films.png" alt="Brand Films" class="card-img">
+            
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list left">
+                <li>Brand Story Films</li>
+                <li>Product Launch Films</li>
+                <li>Campaign Films</li>
+                <li>Founder's Stories</li>
+                <li>Digital Films</li>
+            </ul>
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list right">
+                <li>Corporate Profile Films</li>
+                <li>Company Culture Films</li>
+                <li>Client Testimonial Films</li>
+                <li>CSR Impact Films</li>
+                <li>Training & Internal Communication Films</li>
+            </ul>
+        </div>
+
+        <div class="card">
+             
+            <img src="images\Our Service\Corporate Narration.png" alt="Corporate" class="card-img">
+            
+        </div>
+    </section>
+     <section class="main-section">
+        <div class="card">
+             
+            <img src="images\Our Service\Motion Design & Animation.png" alt="Motion Design & Animations" class="card-img">
+            
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list left">
+                <li>Brand Identity Animations</li>
+                <li>Logo Animations</li>
+                <li>2D/3D Animations</li>
+                <li>Motion Graphic Films</li>
+                <li>Explainer Videos</li>
+            </ul>
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list right">
+                <li>Television Commercials</li>
+                <li>Digital Ad Films</li>
+                <li>Performance Marketing Creatives</li>
+                <li>Product Films</li>
+                <li>Campaign's Launch Films</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            
+            <img src="images\Our Service\TVCs & Digital Commercials.png" alt="TVCs & Digital Commercials" class="card-img">
+            
+        </div>
+    </section>
+     <section class="main-section">
+        <div class="card">
+            
+            <img src="images\Our Service\OTT & Web Series.png" alt="OOT & Web Series" class="card-img">
+            
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list left">
+                <li>Original Web Series</li>
+                <li>Short Format Films</li>
+                <li>Macro Drama Series</li>
+                <li>AI Web Series</li>
+                <li>Film Packaging</li>
+            </ul>
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list right">
+                <li>Social Awareness Campaign</li>
+                <li>Government & Policy PSAs</li>
+                <li>NGO & Non-Profit Films</li>
+                <li>Fund Raising Films</li>
+                <li>Health & Safety Films</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            
+            <img src="images\Our Service\Public Service Announcement.png" alt="Public Service Announcement" class="card-img">
+             
+        </div>
+    </section>
+     <section class="main-section">
+        <div class="card">
+            
+            <img src="images\Our Service\Documentries.png" alt="Documentaries" class="card-img">
+            
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list left">
+                <li>Brand  Documentaries</li>
+                <li>Corporate Documentaries</li>
+                <li>Event & BTS Documentaries</li>
+                <li>CSR Documentaries</li>
+                <li>Social Impact Films</li>
+            </ul>
+        </div>
+
+        <div class="services-container">
+            <ul class="service-list right">
+                <li>Educational Content</li>
+                <li>Thought Leadership Content</li>
+                <li>Case Study Content</li>
+                <li>Data-Driven Content</li>
+                <li>Fact-led Corporate AV</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            
+            <img src="images\Our Service\Factual Content.png" alt="Factual Content" class="card-img">
+            
+        </div>
+    </section>
+</section>
+
+   
+   <!-- <div class="reel-header">
+        <h2>New On <span>Our Reel</span></h2>
+    </div> -->
+     <section class="section-banner">
+      <h2 class="section-title"> New On <span class="accent"> Our Reel</span></h2>
+    </section>
+ 
+    <div class="reel-grid">
+        
+        <div class="reel-box text-box">
+            <h3>Nexa Genuine Accessories</h3>
+            <p>Commercial</p>
+        </div>
+        <div class="reel-box image-box">
+            <img src="images\our-reel\Nexa.png" alt="Nexa Car">
+        </div>
+
+        <div class="reel-box image-box">
+            <img src="images\our-reel\Niharika.png" alt="Documentary">
+        </div>
+        <div class="reel-box text-box">
+            <h3>Why I ride | NIHARIKA</h3>
+            <p>Documentary</p>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+
+
+
+
+  <footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>TwoDots Films</h4>
+      <p class="brand-desc">
+        With 25+ years of experience across advertising, media and broadcast.
+        We offer end-to-end solution, from creative storytelling & video production to digital strategy
+        and performance marketing; driving meaningful growth for brands across digital and broadcast platforms.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">The Team</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#recognition">Recognition</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Link</h4>
+      <ul class="footer-links">
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Information</h4>
+      <p>1556, Gaur City Mall, Greater Noida West, Gaur City 1, Sector 4, Greater Noida, UP-201318, India</p>
+      
+      <div class="contact-info">
+        <p><strong>Phone:</strong></p>
+        <p>+91 9953655158</p>
+        <p>+91 9873088079</p>
+        <p>+91 9911262034</p>
+      </div>
+
+      <div class="socials">
+        <a href="#" class="social-icon">▶</a>
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">in</a>
+        <a href="#" class="social-icon">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
